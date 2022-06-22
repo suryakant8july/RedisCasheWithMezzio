@@ -1,27 +1,26 @@
-# Redis With Mezzio#
-## 1)	Prerequisites for the Redis
+# Redis With Mezzio
 
-    `a.` Redis Server 
+## 1) Prerequisites for the Redis
+
+**a.** Redis Server 
     
-    `b.` RedisPhp php extension https://github.com/phpredis/phpredis
+**b.** RedisPhp php extension https://github.com/phpredis/phpredis
 
 	Note: Docker Configuration has already installed, so no need to configure it again .
 
-## 2)	Laminas required dependency
+## 2) Laminas required dependency
 
 `https://github.com/laminas/laminas-cache-storage-adapter-redis`
 
+Run the following to install this library:
 
+```sh
+$ composer require laminas/laminas-cache
+$ composer require laminas/laminas-cache-storage-adapter-redis
+$ composer update
+```
 
-    Run the following to install this library: 
-
-    ```sh
-    $ composer require laminas/laminas-cache
-    $ composer require laminas/laminas-cache-storage-adapter-redis
-    $ composer update
-    ```
-
-## 3)	Configuration Files
+## 3) Configuration Files
 ```sh
  
 /**
@@ -48,13 +47,13 @@ return [
 
 **Note:** `Status =1` means the Redis cache is enabled for the caching, in the case of multiple cache setting, only first active cache is used for the cashed storage to avoid any confusion, even more than one active cache are listed in the configuration
 
-## 4)	Deploy Helper method to use the configuration
+## 4) Deploy Helper method to use the configuration
 Please store it in the 
 ```sh
     /src/App/src/Helper/CacheHelper.php   
 ```
 
-## 5)	How to use the Redis 
+## 5) How to use the Redis 
 
 Include the name space –
 ```sh  
